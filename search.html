@@ -1,0 +1,152 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>SnapSpots :: Search</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	
+	<!--<script src='star-rating/jquery.rating.js' type="text/javascript" language="javascript"></script>
+	<link href='star-rating/jquery.rating.css' type="text/css" rel="stylesheet"/>-->
+
+</head> 
+<body> 
+
+
+<div data-role="page" id="searchpage">
+
+	<div data-role="header">
+		<h2>Find a Spot</h2>
+		<a href="#optionspage" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-transition="flip"></a>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<ul data-role="listview" data-theme="c">
+			<li>
+				<a href="#detailspage" data-transition="slide">
+					<h2>Devil's Glen</h2>
+					<span class="ui-li-count">1 km(s) away</span>
+				</a>
+            </li>
+			<li>
+				<a href="#detailspage" data-transition="slide">
+					<h2>Cycle Race</h2>
+					<span class="ui-li-count">2 km(s) away</span>
+				</a>
+            </li>
+			<li>
+				<a href="#detailspage" data-transition="slide">
+					<h2>Dun Laoghaire Pier</h2>
+					<span class="ui-li-count">3 km(s) away</span>
+				</a>
+            </li>
+			<li>
+				<a href="#detailspage" data-transition="slide">
+					<h2>St. Patrick's Day Parade</h2>
+					<span class="ui-li-count">8 km(s) away</span>
+				</a>
+            </li>
+		</ul>
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+		<ul>
+			<li><a href="search.html" data-transition="none" data-icon="search" class="ui-btn-active ui-state-persist">Search</a></li>
+			<!--<li><a href="favourites.html" data-transition="none" data-icon="star">Favourites</a></li>-->
+			<li><a href="add.html" data-transition="none" data-icon="plus">Add</a></li>
+		</ul>
+		</div>
+	</div><!-- /footer -->
+
+</div><!-- /page -->
+
+
+<div data-role="page" id="optionspage" data-transition="flip">
+	
+	<div data-role="header">
+		<a href="#searchpage" data-icon="check" data-transition="flip">Save</a>
+		<h2>Search Options</h2>		
+	</div>
+	
+	<div data-role="content">
+	
+		<div data-role="fieldcontain">
+			<label for="searchText">Containing Text</label>
+			<input type="search" name="searchText" id="txtSearch" value="" placeholder="Optional search value" data-mini="true"/>
+		</div>
+		
+		<div data-role="fieldcontain">
+			<label for="rangeSlider">Within 'X' Kilometers</label>
+		 	<input type="range" name="rangeSlider" id="rangeSlider" value="50" min="0" max="100" data-highlight="true" data-mini="true" />
+		</div>
+
+		<div data-role="fieldcontain">
+			<select name="typeOfPhotography" id="ddType" data-mini="true">
+				<option value="0">Any Type of Photography</option>
+				<option value="1">Astrophotography</option>
+				<option value="2">Landscape</option>
+				<option value="3">Macro</option>
+				<option value="4">Sport</option>
+				<option value="5">Street / People</option>
+				<option value="6">Wildlife</option>
+			</select>
+		</div>
+
+		<div data-role="fieldcontain">
+			<select name="timeOfDay" id="ddTime" data-mini="true">
+				<option value="0">Any Time of Day</option>
+				<option value="1">Dawn</option>
+				<option value="2">Sunrise</option>
+				<option value="3">Daytime</option>
+				<option value="4">Sunset</option>
+				<option value="5">Dusk</option>
+				<option value="6">Nighttime</option>
+			</select>
+		</div>
+	</div>	
+	
+</div><!-- /page -->
+
+
+<div data-role="page" id="detailspage">
+	
+	<div data-role="header">
+		<a href="#searchpage" data-icon="arrow-l" data-transition="slide">Back</a>
+		<h2>View Spot</h2>		
+	</div>
+	
+	<div data-role="content">
+	
+		<div data-role="fieldcontain">
+			<p><b>The top of some hill</b></p>
+			<p>This is a really nice location and I would recommend it to anybody.  I brought my camera there, which was a good idea for photography, and I got some nice pictures.  Check it out!</p>
+			<p>Best visited at Sunset</p>
+		</div>
+		
+		<div data-role="fieldcontain">
+			<p>Type(s) of Photography</p>
+			<ul data-role="listview" data-inset="true">
+				<li>Landscape</li>
+				<li>Wildlife</li>
+			</ul>
+		</div>
+		
+		<div data-role="fieldcontainer">
+			<p>Location Map</p>
+			<p>(This will be a map!)</p>
+		</div>
+		
+		<div data-role="fieldcontainer">
+			<p>Location Preview</p>
+			<img src="images/sunset.jpg" />
+		</div>
+		
+	</div>	
+	
+</div><!-- /page -->
+
+
+</body>
+</html>

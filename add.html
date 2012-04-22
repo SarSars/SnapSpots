@@ -1,0 +1,110 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>SnapSpots :: Add New</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+</head> 
+<body> 
+
+
+<div data-role="page">
+
+	<div data-role="header">
+		<h2>Add a Spot</h2>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		
+		<form action="form.php" method="post">
+		
+			<div data-role="fieldcontain">
+				<label for="locationName">Name</label>
+				<input type="text" name="locationName" id="txtName" value="" placeholder="Enter a name" data-mini="true"/>
+			</div>
+			
+			<div data-role="fieldcontain">
+				<label for="locationDescription">Description</label>
+				<textarea cols="40" rows="3" name="locationDescription" id="txtDescription" placeholder="Enter a description of the location" data-mini="true"></textarea>
+			</div>
+			
+			<div data-role="fieldcontain">
+				<fieldset data-role="controlgroup" data-mini="true">
+				
+					<legend>Tick all that apply</legend>
+					
+					<input type="checkbox" name="checkbox-1a" id="checkbox-1a" class="custom" />
+					<label for="checkbox-1a">Astrophotography</label>
+
+					<input type="checkbox" name="checkbox-2a" id="checkbox-2a" class="custom" />
+					<label for="checkbox-2a">Event</label>
+
+					<input type="checkbox" name="checkbox-3a" id="checkbox-3a" class="custom" />
+					<label for="checkbox-3a">Landscape</label>
+
+					<input type="checkbox" name="checkbox-4a" id="checkbox-4a" class="custom" />
+					<label for="checkbox-4a">Macro</label>
+					
+					<input type="checkbox" name="checkbox-5a" id="checkbox-5a" class="custom" />
+					<label for="checkbox-5a">Sport</label>
+					
+					<input type="checkbox" name="checkbox-6a" id="checkbox-6a" class="custom" />
+					<label for="checkbox-6a">Street / People</label>
+					
+					<input type="checkbox" name="checkbox-7a" id="checkbox-7a" class="custom" />
+					<label for="checkbox-7a">Wildlife</label>
+					
+				</fieldset>
+			</div>			
+			
+			<div data-role="fieldcontain">
+				<label for="timeOfDay">Preferred Time of Day</label>
+				<select name="timeOfDay" id="ddTime" data-mini="true">
+					<option value="0">Any Time of Day</option>
+					<option value="1">Dawn</option>
+					<option value="2">Sunrise</option>
+					<option value="3">Daytime</option>
+					<option value="4">Sunset</option>
+					<option value="5">Dusk</option>
+					<option value="6">Nighttime</option>
+				</select>
+			</div>
+			
+			<div data-role="fieldcontain">
+				<label for="camera">Take a Snapshot</label>
+				<a href="index.html" data-role="button" data-icon="grid" data-mini="true" data-iconpos="right">Go to Camera</a>
+			</div>
+			
+			<div data-role="fieldcontain">
+				<label for="camera">Plot Location</label>
+				<iframe name="camera" width="250" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/?ie=UTF8&amp;ll=53.286737,-6.363026&amp;spn=0.006144,0.016512&amp;t=m&amp;z=17&amp;output=embed"></iframe><br /><small>
+			</div>
+			
+			<div class="ui-body ui-body-b">
+				<fieldset class="ui-grid-a">
+					<div class="ui-block-a"><button type="submit" data-theme="d" data-mini="true">Cancel</button></div>
+					<div class="ui-block-b"><button type="submit" data-theme="a" data-mini="true">Submit</button></div>
+				</fieldset>
+			</div>
+		
+		</form>		
+		
+	</div><!-- /content -->
+
+	<div data-role="footer" data-position="fixed">
+		<div data-role="navbar">
+		<ul>
+			<li><a href="search.html" data-transition="none" data-icon="search">Search</a></li>
+			<!--<li><a href="favourites.html" data-transition="none" data-icon="star">Favourites</a></li>-->
+			<li><a href="add.html" data-transition="none" data-icon="plus" class="ui-btn-active ui-state-persist">Add</a></li>
+		</ul>
+		</div>
+	</div><!-- /footer -->
+
+</div><!-- /page -->
+
+
+</body>
+</html>
