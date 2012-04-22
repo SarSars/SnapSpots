@@ -37,6 +37,8 @@
 		
 		function listLocations() {
 			
+			console.log('function start');
+			
 			locationCollection.fetch({
 				
 				success: function(collection) {
@@ -48,10 +50,12 @@
 						//$('#locationList').append('</a></li>');
 					//});
 					
+					console.log('appending');
 					$('#locationList').append('<li><h2>text</h2></li>');
 				},
 
 				complete: function() {
+					console.log('refreshing!');
 					$('#locationList').listview("refresh");
 				},
 					
@@ -62,7 +66,7 @@
 		}
 		
 		$("#searchpage").live("pageinit", function() {
-			console.log(version);
+			console.log('yo yo yo');
 			if ($("#locationList").hasClass("ui-listview")) {
 				listLocations();			
 			}
