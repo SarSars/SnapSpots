@@ -48,7 +48,7 @@
 						//$('#locationList').append('</a></li>');
 					//});
 					
-					$('#locationList').append('<li><a href="#detailspage" data-transition="slide">text</a></li>');
+					$('#locationList').append('<li><h2>text</h2></li>');
 				},
 
 				complete: function() {
@@ -62,7 +62,10 @@
 		}
 		
 		$("#searchpage").live("pageinit", function() {
-			listLocations();			
+			console.log(version);
+			if ($("#locationList").hasClass("ui-listview")) {
+				listLocations();			
+			}
 		});
 		
 	</script>
