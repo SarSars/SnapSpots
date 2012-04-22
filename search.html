@@ -39,7 +39,9 @@
 			
 			console.log('function start');
 			
-			locationCollection.fetch({
+			var locationCollectionInstance = new locationCollection();
+			
+			locationCollectionInstance.fetch({
 				
 				success: function(collection) {
 					
@@ -50,7 +52,7 @@
 						//$('#locationList').append('</a></li>');
 					//});
 					
-					console.debug(locationCollection.toJSON());
+					console.debug(locationCollectionInstance.toJSON());
 					
 					console.log('appending');
 					$('#locationList').append('<li><h2>text</h2></li>');
