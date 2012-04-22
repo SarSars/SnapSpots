@@ -55,10 +55,12 @@
 				$('#locationList').append('<span class="ui-li-count">2 km(s) away</span>');
 				$('#locationList').append('</a></li>');
 			});
+			
+			$('#locationList').listview('refresh');
 		},
 		
 		complete: function() {
-			$('#locationList').listview();
+			//$('#locationList').listview('refresh');
 		},
 			
 		error: function() {
