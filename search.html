@@ -64,14 +64,14 @@
 				}
 			});	
 		}
-		
+/*		
 		$("#searchpage").live("pageinit", function() {
 			console.log('yo yo yo');
 			if ($("#locationList").hasClass("ui-listview")) {
 				listLocations();			
 			}
 		});
-		
+	*/	
 	</script>
 	
 </head> 
@@ -81,6 +81,15 @@
 
 
 <div data-role="page" id="searchpage">
+
+	<script type="text/javascript">
+		$("#searchpage").live("pageinit", function() {
+			console.log('yo yo yo');
+			if ($("#locationList").hasClass("ui-listview")) {
+				listLocations();			
+			}
+		});
+	</script>
 
 	<div data-role="header">
 		<h2>Find a Spot</h2>
