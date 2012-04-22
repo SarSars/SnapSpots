@@ -35,7 +35,7 @@
 			model: location
 		});
 		
-		/*function listLocations() {
+		function listLocations() {
 			
 			//var locationCollection = new LocationCollection();
 		
@@ -61,7 +61,11 @@
 					console.log("ERROR: Could not get location list!");
 				}
 			});	
-		}*/
+		}
+		
+		$("#searchpage").live("pageinit", function() {
+				listLocations();			
+		});
 		
 	</script>
 	
