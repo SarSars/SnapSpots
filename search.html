@@ -52,7 +52,7 @@
 					
 					$('#locationList').append('<li><a href="#detailspage" data-transition="slide">text</a></li>');
 				},
-				
+
 				complete: function() {
 					$('#locationList').listview("refresh");
 				},
@@ -63,7 +63,7 @@
 			});	
 		}
 		
-		$('#searchpage').live('pageinit',function(event){
+		$('#searchpage').live('pageinit', function() {
 			console.log('test?');
 			if ($("#locationlist").hasClass("ui-listview")) {
 				listLocations();
