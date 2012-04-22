@@ -47,23 +47,17 @@
 					
 					console.log('appending');
 					
-					$.each(locationCollectionInstance.toJSON(), function(i, location) {
-					
-						$('#locationList').append('<li><h1>text</h1></li>');
-						
-						/*$('#locationList').append('<li><a href="#detailspage" data-transition="slide">text</a></li>');
-						$('#locationList').append('<h2>SOME TEXT</h2>');
+					$.each(locationCollectionInstance.toJSON(), function(i, location) {											
+						$('#locationList').append('<li><a href="#detailspage" data-transition="slide">text</a></li>');
+						$('#locationList').append('<h2>' + location.locationname + '</h2>');
 						$('#locationList').append('<span class="ui-li-count">2 km(s) away</span>');
-						$('#locationList').append('</a></li>');*/
-					});
-					
-					//$('#locationList').append('<li><h1>text</h1></li>');
-					
+						$('#locationList').append('</a></li>');
+					});					
 				},
 
 				complete: function() {
 					console.log('refreshing!');
-					$('#locationList').listview("refresh");
+					$('#locationList').listview("refresh"); //not working :(
 				},
 					
 				error: function() {
@@ -72,7 +66,7 @@
 			});	
 		}
 	
-		$("#searchpage").live("pageinit", function() {
+		$("#searchpage").live("pageinit", function() { //not working :(
 			console.log('yo yo yo');
 			listLocations();
 		});
@@ -81,8 +75,6 @@
 	
 </head> 
 <body> 
-
-
 
 
 <div data-role="page" id="searchpage">
@@ -95,29 +87,11 @@
 	<div data-role="content">	
 		<input id="mybutton" onclick="javascript:listLocations();" />
 		<ul id="locationList" data-role="listview" data-theme="c">
-			<li><h2>Hello</h2></li>
+			<!-- SAMPLE LI ONLY -->
 			<!--<li>
 				<a href="#detailspage" data-transition="slide">
 					<h2>Devil's Glen 2</h2>
 					<span class="ui-li-count">1 km(s) away</span>
-				</a>
-            </li>
-			<li>
-				<a href="#detailspage" data-transition="slide">
-					<h2>Cycle Race</h2>
-					<span class="ui-li-count">2 km(s) away</span>
-				</a>
-            </li>
-			<li>
-				<a href="#detailspage" data-transition="slide">
-					<h2>Dun Laoghaire Pier</h2>
-					<span class="ui-li-count">3 km(s) away</span>
-				</a>
-            </li>
-			<li>
-				<a href="#detailspage" data-transition="slide">
-					<h2>St. Patrick's Day Parade</h2>
-					<span class="ui-li-count">8 km(s) away</span>
 				</a>
             </li>-->
 		</ul>
