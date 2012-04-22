@@ -27,12 +27,12 @@
 		apiVersion: 0
 		});
 		
-		var location = StackMob.Model.extend({    
+		var locationItem = StackMob.Model.extend({    
 			schemaName: 'location'
 		});
 		
 		var locationCollection = StackMob.Collection.extend({    
-			model: location
+			model: locationItem
 		});
 		
 		function listLocations() {
@@ -64,7 +64,7 @@
 		}
 		
 		$("#searchpage").live("pageinit", function() {
-				listLocations();			
+			listLocations();			
 		});
 		
 	</script>
