@@ -34,7 +34,32 @@
 		var LocationCollection = StackMob.Collection.extend({    
 			model: Location
 		});
+	
+	});
 		
+	</script>
+	
+</head> 
+<body> 
+
+
+
+
+
+
+
+
+
+<div data-role="page" id="searchpage">
+
+	<div data-role="header">
+		<h2>Find a Spot</h2>
+		<a href="#optionspage" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-transition="flip"></a>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+	<script type="text/javascript">
+
 		$('#searchpage').live( 'pageinit',function(event){
   
 		var locationCollection = new LocationCollection();
@@ -59,31 +84,8 @@
 				console.log("ERROR: Could not get location list!");
 			}
 		});
-	
-	});
 		
-	</script>
-	
-</head> 
-<body> 
-
-
-<script type="text/javascript">
 </script>
-
-
-
-
-
-
-<div data-role="page" id="searchpage">
-
-	<div data-role="header">
-		<h2>Find a Spot</h2>
-		<a href="#optionspage" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-transition="flip"></a>
-	</div><!-- /header -->
-
-	<div data-role="content">	
 		<ul id="locationList" data-role="listview" data-theme="c">
 			<!--<li>
 				<a href="#detailspage" data-transition="slide">
