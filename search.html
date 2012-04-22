@@ -48,7 +48,7 @@
 					console.log('appending');
 					
 					$.each(locationCollectionInstance.toJSON(), function(i, location) {											
-						$('#locationList').append('<li><a href="#detailspage" data-transition="slide">text</a></li>');
+						$('#locationList').append('<li><a href="#detailspage" data-transition="slide">');
 						$('#locationList').append('<h2>' + location.locationname + '</h2>');
 						$('#locationList').append('<span class="ui-li-count">2 km(s) away</span>');
 						$('#locationList').append('</a></li>');
@@ -85,7 +85,7 @@
 	</div><!-- /header -->
 
 	<div data-role="content">	
-		<input id="mybutton" onclick="javascript:listLocations();">Test function call - click me!</input>
+		<input id="mybutton" onclick="javascript:listLocations();" text="Test function call - click me!" />
 		<ul id="locationList" data-role="listview" data-theme="c">
 			<!-- SAMPLE LI ONLY -->
 			<!--<li>
