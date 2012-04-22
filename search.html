@@ -41,8 +41,6 @@
 			
 			locationCollection.fetch({
 				
-				console.log(locationCollection.toJSON());
-				
 				success: function(collection) {
 					
 					//$.each(locationCollection.toJSON(), function(i, item) {
@@ -51,6 +49,8 @@
 						//$('#locationList').append('<span class="ui-li-count">2 km(s) away</span>');
 						//$('#locationList').append('</a></li>');
 					//});
+					
+					console.debug(locationCollection.toJSON());
 					
 					console.log('appending');
 					$('#locationList').append('<li><h2>text</h2></li>');
