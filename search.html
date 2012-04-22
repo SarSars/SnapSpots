@@ -50,10 +50,10 @@
 		success: function(collection) {
 			
 			$.each(locationCollection.toJSON(), function (i, item) {
-				$('#locationList').append('<li><a href="#detailspage" data-transition="slide">');
-				$('#locationList').append('<h2>SOME TEXT</h2>');
-				$('#locationList').append('<span class="ui-li-count">2 km(s) away</span>');
-				$('#locationList').append('</a></li>');
+				$('#locationList').append('<li><a href="#detailspage" data-transition="slide">text</a></li>');
+				//$('#locationList').append('<h2>SOME TEXT</h2>');
+				//$('#locationList').append('<span class="ui-li-count">2 km(s) away</span>');
+				//$('#locationList').append('</a></li>');
 			});
 			
 			$('#locationList').listview('refresh');
