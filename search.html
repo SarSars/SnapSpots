@@ -60,8 +60,10 @@
 		}
 		
 		$('#searchpage').live('pageinit',function(event){
-			console.log('It is ready!');
-			listLocations();
+			if ($("#locationlist").hasClass("ui-listview")) {
+				listLocations();
+			}
+			
   		});
 		
 	</script>
