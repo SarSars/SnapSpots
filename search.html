@@ -43,31 +43,7 @@
 
 <script type="text/javascript">
 	
-	console.log('Start');
-	
 	var locationCollection = new LocationCollection();
-	
-	/*
-	//function listLocations() {
-		locationCollection.fetch({
-		
-			success: function(collection) {
-				$.each(locationCollection.toJSON(), function(i, item) {
-					$("#locationList").append('<li>YO YO YO</li>');
-				});
-			},
-			
-			complete: function() {
-				$('#locationList').listview('refresh');
-				//extPitch = pitches;
-			},
-			
-			error: function() {
-				console.log("ERROR: Could not get location list!");
-			}
-		});
-	//}
-	*/
 	
 	locationCollection.fetch({    
 		
@@ -76,13 +52,21 @@
 			console.debug(locationCollection.toJSON());
 			
 			$.each(locationCollection.toJSON(), function (i, item) {
-				$("#locationList").append("<li>test</li>");
+				$("#locationList").append('<li><a href="#detailspage" data-transition="slide">');
+				$("#locationList").append('<h2>SOME TEXT</h2>');
+				$("#locationList").append('<span class="ui-li-count">1 km(s) away</span>');
+				$("#locationList").append('</a></li>');
 			});
+		},
+		
+		complete: function() {
+			$('#locationList').listview('refresh');
+		},
+			
+		error: function() {
+			console.log("ERROR: Could not get location list!");
 		}
 	});
-	
-	
-	console.log('End');
 
 </script>
 
