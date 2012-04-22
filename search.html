@@ -41,12 +41,14 @@
 
 
 <script type="text/javascript">
+	
+	console.log('Start');
+	
 	var locationCollection = new LocationCollection();
 	
-	
-
 	//function listLocations() {
 		locationCollection.fetch({
+		
 			success: function(collection) {
 				$.each(LocationCollection.toJSON(), function(i, item) {
 					$("#locationList").append('<li>YO YO YO</li>');
@@ -55,7 +57,7 @@
 			
 			complete: function() {
 				$('#locationList').listview('refresh');
-				extPitch = pitches;
+				//extPitch = pitches;
 			},
 			
 			error: function() {
@@ -63,6 +65,9 @@
 			}
 		});
 	//}
+	
+	
+	console.log('End');
 
 </script>
 
