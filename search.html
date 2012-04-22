@@ -27,17 +27,17 @@
 		apiVersion: 0
 		});
 		
-		var Location = StackMob.Model.extend({    
+		var location = StackMob.Model.extend({    
 			schemaName: 'location'
 		});
 		
-		var LocationCollection = StackMob.Collection.extend({    
-			model: Location
+		var locationCollection = StackMob.Collection.extend({    
+			model: location
 		});
 		
 		function listLocations(){
 			
-			var locationCollection = new LocationCollection();
+			//var locationCollection = new LocationCollection();
 		
 			locationCollection.fetch({
 				
