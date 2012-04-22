@@ -25,8 +25,6 @@
 		apiVersion: 0
 		});
 		
-		
-		//Define your Todo class once on the page.  
 		var Location = StackMob.Model.extend({    
 			schemaName: 'location'
 		});
@@ -34,18 +32,43 @@
 		var LocationCollection = StackMob.Collection.extend({    
 			model: Location
 		});
+		
+		function listLocations(){
+			
+			var locationCollection = new LocationCollection();
+		
+			locationCollection.fetch({
+				
+				success: function(collection) {
+					
+					$.each(locationCollection.toJSON(), function (i, item) {
+						$('#locationList').append('<li><a href="#detailspage" data-transition="slide">text</a></li>');
+						//$('#locationList').append('<h2>SOME TEXT</h2>');
+						//$('#locationList').append('<span class="ui-li-count">2 km(s) away</span>');
+						//$('#locationList').append('</a></li>');
+					});
+				},
+				
+				complete: function() {
+					$('#locationList').listview("refresh");
+				},
+					
+				error: function() {
+					console.log("ERROR: Could not get location list!");
+				}
+			}
 	
-	});
+		});
+		
+		$('#searchpage').live( 'pageinit',function(event){
+			console.log('It is ready!');
+			listLocations();
+  		});
 		
 	</script>
 	
 </head> 
 <body> 
-
-
-
-
-
 
 
 
@@ -58,34 +81,6 @@
 	</div><!-- /header -->
 
 	<div data-role="content">	
-	<script type="text/javascript">
-
-		$('#searchpage').live( 'pageinit',function(event){
-  
-		var locationCollection = new LocationCollection();
-		
-		locationCollection.fetch({    
-			
-			success: function(collection) {
-				
-				$.each(locationCollection.toJSON(), function (i, item) {
-					$('#locationList').append('<li><a href="#detailspage" data-transition="slide">text</a></li>');
-					//$('#locationList').append('<h2>SOME TEXT</h2>');
-					//$('#locationList').append('<span class="ui-li-count">2 km(s) away</span>');
-					//$('#locationList').append('</a></li>');
-				});
-			},
-			
-			complete: function() {
-				$('#locationList').listview("refresh");
-			},
-				
-			error: function() {
-				console.log("ERROR: Could not get location list!");
-			}
-		});
-		
-</script>
 		<ul id="locationList" data-role="listview" data-theme="c">
 			<!--<li>
 				<a href="#detailspage" data-transition="slide">
