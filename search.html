@@ -70,13 +70,15 @@
 	*/
 	
 	locationCollection.fetch({    
+		
 		success: function(collection) {
-			console.debug(locationCollection.toJSON());    
+			
+			console.debug(locationCollection.toJSON());
 			
 			$.each(locationCollection.toJSON(), function (i, item) {
 				$.('#locationList').append('<li>test</li>');
 			});
-		} 
+		}
 	});
 	
 	
