@@ -38,37 +38,27 @@
 				
 		function listLocations() {
 			
-			console.log('function start');			
-			
 			locationCollectionInstance.fetch({
 				
 				success: function(collection) {
 					
-					console.log('appending');
-					
-					/*$.each(locationCollectionInstance.toJSON(), function(i, location) {
+					$.each(locationCollectionInstance.toJSON(), function(i, location) {
 						$('#locationList').append('<li><a href="#detailspage" data-transition="slide">');
 						$('#locationList').append('<h2>' + location.locationname + '</h2>');
 						$('#locationList').append('<span class="ui-li-count">2 km(s) away</span>');
 						$('#locationList').append('</a></li>');
-					});*/
+					});
 					
-					$('#locationList').append('<li><h2>1 km(s) away</h2></li>');
-					$('#locationList').listview('refresh'); //not working :(
 				},
-
 				
 				complete: function() {
-					console.log('refreshing!');
-					$('#locationList').listview('refresh'); //not working :(
+					$('#locationList').listview('refresh');
 				}
 
 			});	
 		}
 	
-	
-		$("#searchpage").live("pageinit", function() { //not working :(
-			console.log('yo yo yo');
+		$("#searchpage").live("pageinit", function() {
 			listLocations();
 		});
 	
@@ -84,14 +74,9 @@
 		<h2>Find a Spot</h2>
 		<a href="#optionspage" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-transition="flip"></a>
 	</div><!-- /header -->
-
-	<input type="button" id="mybutton" onclick="javascript:listLocations();" value="Test function call - click me!" />
 	
 	<div data-role="content">			
 		<ul id="locationList" data-role="listview" data-theme="c">
-			<li><h2>2 km(s) away</h2></li>
-			<li><h2>2 km(s) away</h2></li>
-			<li><h2>2 km(s) away</h2></li>
 			<!-- SAMPLE LI ONLY -->
 			<!--<li>
 				<a href="#detailspage" data-transition="slide">
