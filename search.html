@@ -35,21 +35,21 @@
 			model: locationItem
 		});
 		
-		//var locationCollectionInstance = new locationCollection();
-		
+		var locationCollectionInstance = new locationCollection();
+				
 		function listLocations() {
 			
 			console.log('function start');			
 			
-			locationCollection.fetch({
+			locationCollectionInstance.fetch({
 				
 				success: function(collection) {
 					
 					console.log('appending');
 					
-					$.each(locationCollection.toJSON(), function(i, thing) {											
+					$.each(locationCollectionInstance.toJSON(), function(i, location) {
 						$('#locationList').append('<li><a href="#detailspage" data-transition="slide">');
-						$('#locationList').append('<h2>' + thing.locationname + '</h2>');
+						$('#locationList').append('<h2>' + location.locationname + '</h2>');
 						$('#locationList').append('<span class="ui-li-count">2 km(s) away</span>');
 						$('#locationList').append('</a></li>');
 					});					
@@ -58,19 +58,18 @@
 				complete: function() {
 					console.log('refreshing!');
 					$('#locationList').listview('refresh'); //not working :(
-				},
-					
-				error: function() {
-					console.log("ERROR: Could not get location list!");
 				}
+
 			});	
 		}
 	
+	/*
 		$("#searchpage").live("pageinit", function() { //not working :(
 			console.log('yo yo yo');
 			listLocations();
 		});
-
+	*/
+	
 	</script>
 	
 </head> 
