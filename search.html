@@ -35,21 +35,21 @@
 			model: locationItem
 		});
 		
-		var locationCollectionInstance = new locationCollection();
+		var locationCollection = new locationCollection();
 		
 		function listLocations() {
 			
 			console.log('function start');			
 			
-			locationCollectionInstance.fetch({
+			locationCollection.fetch({
 				
 				success: function(collection) {
 					
 					console.log('appending');
 					
-					$.each(locationCollectionInstance.toJSON(), function(i, location) {											
+					$.each(locationCollection.toJSON(), function(i, thing) {											
 						$('#locationList').append('<li><a href="#detailspage" data-transition="slide">');
-						$('#locationList').append('<h2>' + location.locationname + '</h2>');
+						$('#locationList').append('<h2>' + thing.locationname + '</h2>');
 						$('#locationList').append('<span class="ui-li-count">2 km(s) away</span>');
 						$('#locationList').append('</a></li>');
 					});					
