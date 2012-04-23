@@ -45,6 +45,10 @@
 				
 				success: function(collection) {
 					
+					console.log('removing old');
+					
+					$('#locationList li').remove();
+					
 					console.log('appending');
 					
 					$.each(locationCollectionInstance.toJSON(), function(i, location) {
