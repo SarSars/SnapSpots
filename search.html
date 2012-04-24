@@ -39,8 +39,7 @@
 		function listLocations() {			
 			locationCollectionInstance.fetch({				
 				success: function(collection) {					
-					$.each(locationCollectionInstance.toJSON(), function(i, location) {		
-					
+					$.each(locationCollectionInstance.toJSON(), function(i, location) {					
 						$('#locationList').append('<li><a href="javascript:showLocationDetail({'
 						+ '\'locationName\':\'' + location.locationname + '\','
 						+ '\'locationDescription\':\'' + location.locationdescription + '\','
@@ -48,8 +47,7 @@
 						+ '\'timeOfDay\':\'' + location.timeofday + '\''
 						+ '});" data-transition="slide"><h2>' 
 						+ location.locationname 
-						+ '</h2><span class="ui-li-count">2 km(s) away</span></a></li>');
-						
+						+ '</h2><span class="ui-li-count">2 km(s) away</span></a></li>');						
 					});					
 				},				
 				complete: function() {
@@ -59,7 +57,10 @@
 		}
 		
 		function showLocationDetail(o) {
-			alert(o.locationDescription);
+			//alert(o.locationDescription);
+			$('#locationName').Value = o.locationName;
+			
+			$.mobile.changePage("#detailspage"); 	
 		}
 		
 		
@@ -164,8 +165,8 @@
 	<div data-role="content">
 	
 		<div data-role="fieldcontain">
-			<p><b>The top of some hill</b></p>
-			<p>This is a really nice location and I would recommend it to anybody.  I brought my camera there, which was a good idea for photography, and I got some nice pictures.  Check it out!</p>
+			<p id="locationName"><b>The top of some hill</b></p>
+			<p id="locationDescription">This is a really nice location and I would recommend it to anybody.  I brought my camera there, which was a good idea for photography, and I got some nice pictures.  Check it out!</p>
 			<p>Best visited at Sunset</p>
 		</div>
 		
