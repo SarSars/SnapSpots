@@ -68,12 +68,15 @@
 				$('#listTypeOfPhotography').append('<li>' + tempSplit[index] + '</li>' );
 			});
 			
-			$('#listTypeOfPhotography').listview("refresh");  
 			$.mobile.changePage("#detailspage");
 		} 
 	
 		$("#searchpage").live("pageinit", function() {
 			listLocations();
+		});
+		
+		$("#detailspage").live("pageinit", function() {
+			$('#listTypeOfPhotography').listview("refresh");
 		});
 	
 	</script>
