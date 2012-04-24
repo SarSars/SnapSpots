@@ -42,9 +42,9 @@
 					$.each(locationCollectionInstance.toJSON(), function(i, location) {		
 					
 						$('#locationList').append('<li><a href="javascript:showLocationDetail({'
-						+ '\'locationName\':\'' + location.locationname + '\':'
-						+ '\'locationDescription\':\'' + location.locationdescription + '\':'
-						+ '\'photographyType\':\'' + location.photographytype + '\':'
+						+ '\'locationName\':\'' + location.locationname + '\','
+						+ '\'locationDescription\':\'' + location.locationdescription + '\','
+						+ '\'photographyType\':\'' + location.photographytype + '\','
 						+ '\'timeOfDay\':\'' + location.timeofday + '\''
 						+ '});" data-transition="slide"><h2>' 
 						+ location.locationname 
