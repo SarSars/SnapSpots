@@ -41,7 +41,9 @@
 				success: function(collection) {					
 					$.each(locationCollectionInstance.toJSON(), function(i, location) {		
 					
-						$('#locationList').append('<li><a href="javascript:showLocationDetail({\'locationname\':\'value1\'});" data-transition="slide"><h2>' 
+						$('#locationList').append('<li><a href="javascript:showLocationDetail({'
+						+ '\'locationname\':\'' + location.locationname + '\''
+						+ '});" data-transition="slide"><h2>' 
 						+ location.locationname 
 						+ '</h2><span class="ui-li-count">2 km(s) away</span></a></li>');
 						
