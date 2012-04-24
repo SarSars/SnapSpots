@@ -61,7 +61,7 @@
 			$('#locationDescription').text(o.locationDescription);
 			$('#timeOfDay').text('Best visited at ' + o.timeOfDay);
 		
-			$.each(location.photographyType.split(','), function(item) { 
+			$.each(o.photographyType.split(','), function(item) { 
 				$('#listTypeOfPhotography').append('<li>' + item + '</li>' );
 			});
 		
