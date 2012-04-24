@@ -59,7 +59,7 @@
 		function showLocationDetail(o) {
 			//alert(o.locationDescription);
 			$('#locationName').text(o.locationName);
-			
+			$('#locationDescription').text(o.locationDescription);
 			$.mobile.changePage("#detailspage");
 		}
 		
@@ -165,7 +165,7 @@
 	<div data-role="content">
 	
 		<div data-role="fieldcontain">
-			<p id="locationName"><b>The top of some hill</b></p>
+			<b><p id="locationName">The top of some hill</p></b>
 			<p id="locationDescription">This is a really nice location and I would recommend it to anybody.  I brought my camera there, which was a good idea for photography, and I got some nice pictures.  Check it out!</p>
 			<p>Best visited at Sunset</p>
 		</div>
