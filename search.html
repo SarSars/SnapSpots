@@ -43,7 +43,11 @@
 				success: function(collection) {
 					
 					$.each(locationCollectionInstance.toJSON(), function(i, location) {
-						$('#locationList').append('<li><a href="#detailspage" data-transition="slide"><h2>' + location.locationname + '</h2><span class="ui-li-count">2 km(s) away</span></a></li>');
+						$('#locationList').append('<li><a href="javascript:ShowLocationDetail(
+						+ location.location_ud
+						+ '" data-transition="slide"><h2>' 
+						+ location.locationname 
+						+ '</h2><span class="ui-li-count">2 km(s) away</span></a></li>');
 					});
 					
 				},
