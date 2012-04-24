@@ -40,8 +40,11 @@
 			locationCollectionInstance.fetch({				
 				success: function(collection) {					
 					$.each(locationCollectionInstance.toJSON(), function(i, location) {
-						$('#locationList').append('<li><a href="javascript:ShowLocationDetail('
-						+ location 
+						$('#locationList').append('<li><a href="javascript:ShowLocationDetail('{"prop1":"value1","prop2":"value2"}'\' +
+						
+						//doh( '{"prop1":"value1","prop2":"value2"}' );						
+						
+						//+ location 
 						+ ');" data-transition="slide"><h2>' 
 						+ location.locationname 
 						+ '</h2><span class="ui-li-count">2 km(s) away</span></a></li>');
@@ -53,9 +56,13 @@
 			});	
 		}
 		
-		function showLocationDetail(location_id) {
-			
+		function showLocationDetail(o) {
+			var obj = eval("(" + 0 + ")");
+			alert(obj.locationname);
 		}
+		
+		
+ 
 	
 		$("#searchpage").live("pageinit", function() {
 			listLocations();
