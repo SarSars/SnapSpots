@@ -63,13 +63,12 @@
 
 			$('#listTypeOfPhotography').empty(); 
 			
-			var tempSplit = o.photographyType.split(',');
-			
-			$.each(tempSplit, function(number) {
-				$('#listTypeOfPhotography').append('<li>' + tempSplit[number] + '</li>' );
-				console.log(tempSplit[number]);
+			var tempSplit = o.photographyType.split(',');			
+			$.each(tempSplit, function(index) {
+				$('#listTypeOfPhotography').append('<li>' + tempSplit[index] + '</li>' );
 			});
 			
+			$('#listTypeOfPhotography').listview("refresh");  
 			$.mobile.changePage("#detailspage");
 		} 
 	
