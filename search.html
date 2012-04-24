@@ -66,8 +66,8 @@
 			var tempSplit = o.photographyType.split(',');
 			
 			$.each(tempSplit, function(number) {
-				$('#listTypeOfPhotography').append('<li>' + o.photographyType[number] + '</li>' );
-				console.log(o.photographyType[number]);
+				$('#listTypeOfPhotography').append('<li>' + tempSplit[number] + '</li>' );
+				console.log(tempSplit[number]);
 			});
 			
 			$.mobile.changePage("#detailspage");
