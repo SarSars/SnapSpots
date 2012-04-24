@@ -42,7 +42,10 @@
 					$.each(locationCollectionInstance.toJSON(), function(i, location) {		
 					
 						$('#locationList').append('<li><a href="javascript:showLocationDetail({'
-						+ '\'locationname\':\'' + location.locationname + '\''
+						+ '\'locationName\':\'' + location.locationname + '\''
+						+ '\'locationDescription\':\'' + location.locationdescription + '\''
+						+ '\'photographyType\':\'' + location.photographytype + '\''
+						+ '\'timeOfDay\':\'' + location.timeofday + '\''
 						+ '});" data-transition="slide"><h2>' 
 						+ location.locationname 
 						+ '</h2><span class="ui-li-count">2 km(s) away</span></a></li>');
@@ -56,8 +59,7 @@
 		}
 		
 		function showLocationDetail(o) {
-			//var obj = eval("(" + 0 + ")");
-			alert(o.locationname);
+			alert(o.locationdescription);
 		}
 		
 		
