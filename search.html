@@ -60,10 +60,10 @@
 			$('#locationName').text(o.locationName);
 			$('#locationDescription').text(o.locationDescription);
 			$('#timeOfDay').text('Best visited at ' + o.timeOfDay);
-		
-			$.each(o.photographyType.split(','), function(item) { 
+
+			/*$.each(o.photographyType.split(','), function(item) { 
 				$('#listTypeOfPhotography').append('<li>' + item + '</li>' );
-			});
+			});*/
 		
 			$.mobile.changePage("#detailspage");
 		} 
