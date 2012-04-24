@@ -33,30 +33,28 @@
 		var locationCollection = StackMob.Collection.extend({    
 			model: locationItem
 		});
-		
+
 		var locationCollectionInstance = new locationCollection();
-				
-		function listLocations() {
-			
-			locationCollectionInstance.fetch({
-				
-				success: function(collection) {
-					
+
+		function listLocations() {			
+			locationCollectionInstance.fetch({				
+				success: function(collection) {					
 					$.each(locationCollectionInstance.toJSON(), function(i, location) {
 						$('#locationList').append('<li><a href="javascript:ShowLocationDetail('
-						+ location.location_id 
+						+ location 
 						+ ');" data-transition="slide"><h2>' 
 						+ location.locationname 
 						+ '</h2><span class="ui-li-count">2 km(s) away</span></a></li>');
-					});
-					
-				},
-				
+					});					
+				},				
 				complete: function() {
 					$('#locationList').listview('refresh');
 				}
-
 			});	
+		}
+		
+		function showLocationDetail(location_id) {
+			
 		}
 	
 		$("#searchpage").live("pageinit", function() {
