@@ -39,10 +39,12 @@
 		function listLocations() {			
 			locationCollectionInstance.fetch({				
 				success: function(collection) {					
-					$.each(locationCollectionInstance.toJSON(), function(i, location) {
-						$('#locationList').append('<li><a href="javascript:ShowLocationDetail({\"locationname\":\"value1\",\"prop2\":\"value2\"});" data-transition="slide"><h2>' 
+					$.each(locationCollectionInstance.toJSON(), function(i, location) {		
+					
+						$('#locationList').append('<li><a href="javascript:ShowLocationDetail({\""locationname\"":\""value1\""});" data-transition="slide"><h2>' 
 						+ location.locationname 
 						+ '</h2><span class="ui-li-count">2 km(s) away</span></a></li>');
+						
 					});					
 				},				
 				complete: function() {
