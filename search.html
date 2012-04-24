@@ -57,16 +57,16 @@
 		}
 		
 		function showLocationDetail(o) {
-			//alert(o.locationDescription);
 			$('#locationName').text(o.locationName);
 			$('#locationDescription').text(o.locationDescription);
 			$('#timeOfDay').text('Best visited at ' + o.timeOfDay);
-			
+		
+			$.each(location.TypeOfPhotography.split(','), function(item) { 
+				$('#listTypeOfPhotography').append('<li>' + item + '</li>' );
+			} 
+		
 			$.mobile.changePage("#detailspage");
-		}
-		
-		
- 
+		} 
 	
 		$("#searchpage").live("pageinit", function() {
 			listLocations();
@@ -174,9 +174,7 @@
 		
 		<div data-role="fieldcontain">
 			<p>Type(s) of Photography</p>
-			<ul data-role="listview" data-inset="true">
-				<li>Landscape</li>
-				<li>Wildlife</li>
+			<ul id="listTypeOfPhotography" data-role="listview" data-inset="true">
 			</ul>
 		</div>
 		
