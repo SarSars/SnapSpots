@@ -58,13 +58,17 @@
 		
 		function showLocationDetail(o) {
 			$('#locationName').text(o.locationName);
-			$('#locationDescription').text(o.photographyType);
+			$('#locationDescription').text(o.locationDescription);
 			$('#timeOfDay').text('Best visited at ' + o.timeOfDay);
 
-			/*$.each(o.photographyType.split(','), function(item) { 
-				$('#listTypeOfPhotography').append('<li>' + item + '</li>' );
-			});*/
-		
+			$('#listTypeOfPhotography').empty(); 
+			
+			var tempSplit = o.photographyType.split(',');
+			
+			$.each(tempSplit, function(number) {
+				$('#listTypeOfPhotography').append('<li>' + o.photographyType[number] + '</li>' );
+			});
+			
 			$.mobile.changePage("#detailspage");
 		} 
 	
