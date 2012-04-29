@@ -32,23 +32,23 @@
 
 		function createLocation() {
 		
-			var location = new locationItem({
+			var newLocation = new locationItem({
 				locationName: 'Test Location 1', 
 				locationDescription: 'Test Description 1',
 				photographyType: 'Test Photography Type 1',
 				timeOfDay: 'Test ToD 1'
 			});
 			
-			console.debug(location.get('locationName'));
-			console.debug(location.get('locationDescription'));
+			console.debug(newLocation.get('locationName'));
+			console.debug(newLocation.get('locationDescription'));
 
-			location.create({
+			newLocation.create({
 				success: function(model) {
-					//jackpot! fruity breakfasts for everyone!
+					console.log('CREATED!');
 				},    
 				
 				error: function(model, response) {      
-					//failed to create the cereal of my dreams
+					console.log('Failed :(');
 				}
 			});
 		}
