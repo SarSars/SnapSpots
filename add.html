@@ -34,7 +34,8 @@
 		
 			var _locationName = $("#locationName").val();
 			var _locationDescription = $("#locationDescription").val();
-			var _timeOfDay = document.getElementById("ddTime").options[e.selectedIndex].text; 
+			var _ddTime = document.getElementById("ddTime");
+			var _timeOfDay = _ddTime.options[_ddTime.selectedIndex].text; 
 
 		
 			var newLocation = new locationItem({
