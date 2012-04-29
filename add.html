@@ -57,11 +57,11 @@
 
 			newLocation.create({
 				success: function(model) {
-					console.log('CREATED!');
+					//console.log('CREATED!');
 				},
 
 				error: function(model, response) {      
-					console.log('Failed :(');
+					$("#lblWarning").text('Could not create location object!');
 				}
 			});
 		}
@@ -72,7 +72,7 @@
 		
 			if (locationName.length == 0 || locationDescription.length == 0 || checkBoxCount == 0)
 			{
-				$("#lblWarning").append('You must complete all fields!');				
+				$("#lblWarning").text('You must complete all fields!');
 				
 				return false;
 			}
