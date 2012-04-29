@@ -31,23 +31,26 @@
 		});
 
 		function createLocation() {
-		
+
 			var _locationName = $("#txtName").val();
 			var _locationDescription = $("#txtDescription").val();
-			//var _ddTime = document.getElementById("ddTime");
-			//var _timeOfDay = _ddTime.options[_ddTime.selectedIndex].text; 
 			var _timeOfDay = $("#ddTime option:selected").text();
+			
+			var stringList;
+			$("#cbxType").each (function (index) {
+				stringList = stringList + ',' + $(this).attr ("checked");
+			});
+			
+			console.log(stringList);
 
-		
+
+
 			var newLocation = new locationItem({
 				locationname: _locationName, 
 				locationdescription: _locationDescription,
 				photographytype: 'Test Photography Type 1',
 				timeofday: _timeOfDay
 			});
-			
-			console.debug(newLocation.get('locationname'));
-			console.debug(newLocation.get('locationdescription'));
 
 			newLocation.create({
 				success: function(model) {
@@ -86,7 +89,7 @@
 			</div>
 			
 			<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup" data-mini="true">
+				<fieldset id="cbxType" data-role="controlgroup" data-mini="true">
 				
 					<legend>Tick all that apply</legend>
 					
