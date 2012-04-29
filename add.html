@@ -46,10 +46,8 @@
 			
 			//$("input[type='checkbox']:first").attr("checked",true).checkboxradio("refresh");
 			
-			$("input[type='checkbox']").each (function (index) {
-				if ($(this).attr ("checked") == true) {
-					console.log('yes!');
-				}			
+			$("$cbxType : checkbox:checked").each (function (index) {
+				console.log('yes!');
 			});
 		
 
@@ -100,7 +98,7 @@
 			</div>
 			
 			<div data-role="fieldcontain">
-				<fieldset data-role="controlgroup" data-mini="true">
+				<fieldset id="cbxType" data-role="controlgroup" data-mini="true">
 				
 					<legend>Tick all that apply</legend>
 					
