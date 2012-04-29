@@ -81,6 +81,11 @@
 		}
 
 	</script>
+	
+	<style type="text/css">
+    	.warning{ color:red;}
+    </style>
+	
 </head> 
 <body> 
 
@@ -94,10 +99,6 @@
 	<div data-role="content">
 		
 		<form action="#" method="post">
-		
-			<div data-role="fieldcontain">
-				<label id="lblWarning"></label>
-			</div>
 		
 			<div data-role="fieldcontain">
 				<label for="txtName">Name</label>
@@ -173,6 +174,10 @@
 				 <div><button type="submit" data-theme="c">Cancel</button></div>
 				 <div><button type="submit" data-theme="b">Submit</button></div>
 				</fieldset>-->
+			</div>
+
+			<div data-role="fieldcontain">
+				<label id="lblWarning" class="warning"></label>
 			</div>
 		
 		</form>		
