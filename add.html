@@ -35,18 +35,18 @@
 			var _locationName = $("#txtName").val();
 			var _locationDescription = $("#txtDescription").val();
 			var _timeOfDay = $("#ddTime option:selected").text();
-			var typeList = "";
+			var _typeList = "";
 						
 			$("#cbxType :checkbox:checked").each (function () {
-				typeList = typeList + $(this).attr('name') + ',';
+				_typeList = _typeList + $(this).attr('name') + ',';
 			});
 			
-			var fixedList = typeList.substring(0, typeList.length - 2);
+			_typeList = _typeList.substring(0, _typeList.length - 1);
 
 			var newLocation = new locationItem({
 				locationname: _locationName, 
 				locationdescription: _locationDescription,
-				photographytype: fixedList,
+				photographytype: _typeList,
 				timeofday: _timeOfDay
 			});
 
