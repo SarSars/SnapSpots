@@ -6,6 +6,40 @@
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
 	<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js"></script>
+	
+	<script>
+	
+		StackMob.init({
+			appName: 'snapspots',
+			clientSubdomain: 'petermurphy',
+			apiVersion: 0
+		});
+		
+		var locationItem = StackMob.Model.extend({    
+			schemaName: 'location'
+		});
+
+		function createLocation() {
+		
+			var location = new locationItem({
+				'locationName': 'Test Location 1', 
+				'locationDescription': 'Test Description 1',
+				'photographyType': 'Test Photography Type 1',
+				'timeOfDay': 'Test ToD 1'
+			});
+
+			location.create({
+				success: function(model) {
+					//jackpot! fruity breakfasts for everyone!
+				},    
+				
+				error: function(model, response) {      
+					//failed to create the cereal of my dreams
+				}
+			});
+		}
+		
+	</script>
 </head> 
 <body> 
 
