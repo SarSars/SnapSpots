@@ -108,7 +108,6 @@
 		<div data-role="navbar">
 		<ul>
 			<li><a href="search.html" data-transition="none" data-icon="search" class="ui-btn-active ui-state-persist">Search</a></li>
-			<!--<li><a href="favourites.html" data-transition="none" data-icon="star">Favourites</a></li>-->
 			<li><a href="add.html" data-transition="none" data-icon="plus">Add</a></li>
 		</ul>
 		</div>
@@ -127,13 +126,13 @@
 	<div data-role="content">
 	
 		<div data-role="fieldcontain">
-			<label for="searchText">Containing Text</label>
-			<input type="search" name="searchText" id="txtSearch" value="" placeholder="Optional search value" data-mini="true"/>
+			<label for="txtSearch">Containing Text</label>
+			<input type="search" id="txtSearch" value="" placeholder="Optional search value" data-mini="true"/>
 		</div>
 		
 		<div data-role="fieldcontain">
 			<label for="rangeSlider">Within 'X' Kilometers</label>
-		 	<input type="range" name="rangeSlider" id="rangeSlider" value="50" min="0" max="100" data-highlight="true" data-mini="true" />
+		 	<input type="range" id="rangeSlider" value="50" min="0" max="100" data-highlight="true" data-mini="true" />
 		</div>
 
 		<div data-role="fieldcontain">

@@ -36,12 +36,23 @@
 			var _locationDescription = $("#txtDescription").val();
 			var _timeOfDay = $("#ddTime option:selected").text();
 			
-			var stringList;
+			/*var stringList;
 			$("#cbxType").each (function (index) {
 				stringList = stringList + ',' + $(this).attr ("checked");
 			});
 			
-			console.log(stringList);
+			console.log(stringList);*/
+			
+			
+			//$("input[type='checkbox']:first").attr("checked",true).checkboxradio("refresh");
+			
+			$("input[type='checkbox']").each (function (index) {
+				if ($(this).attr ("checked", true)) {
+					console.log('yes!');
+				}			
+			});
+		
+
 
 
 
@@ -89,7 +100,7 @@
 			</div>
 			
 			<div data-role="fieldcontain">
-				<fieldset id="cbxType" data-role="controlgroup" data-mini="true">
+				<fieldset data-role="controlgroup" data-mini="true">
 				
 					<legend>Tick all that apply</legend>
 					
@@ -162,7 +173,6 @@
 		<div data-role="navbar">
 		<ul>
 			<li><a href="search.html" data-transition="none" data-icon="search">Search</a></li>
-			<!--<li><a href="favourites.html" data-transition="none" data-icon="star">Favourites</a></li>-->
 			<li><a href="add.html" data-transition="none" data-icon="plus" class="ui-btn-active ui-state-persist">Add</a></li>
 		</ul>
 		</div>
