@@ -35,6 +35,12 @@
 			var _locationName = $("#txtName").val();
 			var _locationDescription = $("#txtDescription").val();
 			var _timeOfDay = $("#ddTime option:selected").text();
+			
+			if (!validatePage(_locationName, _locationDescription, _timeOfDay)) {
+				//popup
+				return false;
+			}
+
 			var _typeList = "";
 						
 			$("#cbxType :checkbox:checked").each (function () {
@@ -54,11 +60,26 @@
 				success: function(model) {
 					console.log('CREATED!');
 				},    
-				
+
 				error: function(model, response) {      
 					console.log('Failed :(');
 				}
 			});
+		}
+
+		function validatePage(locationName, locationDescription, timeOfDay) {
+
+			var checkBoxCount = $("#cbxType :checkbox:checked").length > 0;
+		
+			if (locationName.length == 0 || locationDescription.length == 0 || timeOfDay.length == 0 || checkBoxCount == false)
+			{
+				//$("#commentField").append('Name and comment are required fields');
+				console.log('Could not validate');
+				
+				return false;
+			}
+			
+			return true;
 		}
 		
 	</script>
