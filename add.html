@@ -36,8 +36,7 @@
 			var _locationDescription = $("#txtDescription").val();
 			var _timeOfDay = $("#ddTime option:selected").text();
 			
-			if (!validatePage(_locationName, _locationDescription, _timeOfDay)) {
-				//popup
+			if (!validatePage(_locationName, _locationDescription)) {
 				return false;
 			}
 
@@ -59,7 +58,7 @@
 			newLocation.create({
 				success: function(model) {
 					console.log('CREATED!');
-				},    
+				},
 
 				error: function(model, response) {      
 					console.log('Failed :(');
@@ -67,21 +66,20 @@
 			});
 		}
 
-		function validatePage(locationName, locationDescription, timeOfDay) {
+		function validatePage(locationName, locationDescription) {
 
-			var checkBoxCount = $("#cbxType :checkbox:checked").length > 0;
+			var checkBoxCount = $("#cbxType :checkbox:checked").length;
 		
-			if (locationName.length == 0 || locationDescription.length == 0 || timeOfDay.length == 0 || checkBoxCount == false)
+			if (locationName.length == 0 || locationDescription.length == 0 || checkBoxCount == 0)
 			{
-				//$("#commentField").append('Name and comment are required fields');
-				console.log('Could not validate');
+				$("#lblWarning").append('You must complete all fields!');				
 				
 				return false;
 			}
 			
 			return true;
 		}
-		
+
 	</script>
 </head> 
 <body> 
@@ -93,9 +91,13 @@
 		<h2>Add a Spot</h2>
 	</div><!-- /header -->
 
-	<div data-role="content">	
+	<div data-role="content">
 		
-		<form method="post">
+		<form action="#" method="post">
+		
+			<div data-role="fieldcontain">
+				<label id="lblWarning"></label>
+			</div>
 		
 			<div data-role="fieldcontain">
 				<label for="txtName">Name</label>
