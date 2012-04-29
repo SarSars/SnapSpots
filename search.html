@@ -164,7 +164,7 @@
 </div><!-- /page -->
 
 
-<div data-role="page" id="detailspage">
+<div data-role="page" id="detailspage" data-transition="slide">
 	
 	<div data-role="header">
 		<a href="#searchpage" data-icon="arrow-l" data-transition="slide">Back</a>
@@ -201,3 +201,16 @@
 
 </body>
 </html>
+
+
+<!--I have found two situations where this can be annoying. First, in list items, where I prefer to see the full text. And secondly, in the footer text. It seems once you have more than just a few characters down there, it starts getting truncated with “…”. Use this simple CSS to override both of these defaults.
+
+For list items:
+body .ui-li .ui-li-desc {
+ white-space: normal;
+ }
+For footer content:
+body .ui-footer .ui-title {
+ white-space: normal;
+ }
+-->
