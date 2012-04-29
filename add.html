@@ -38,12 +38,11 @@
 			var typeList;
 						
 			$("#cbxType :checkbox:checked").each (function () {
+				typeList = typeList + $(this).attr('name');
+			});
 			
-				console.log($(this).attr('name'));
-			
-				typeList = typeList + $(this).attr('name') + ',';				
-			});			
-		
+			typeList = typeList.substring(1, typeList.length() - 1);
+
 			var newLocation = new locationItem({
 				locationname: _locationName, 
 				locationdescription: _locationDescription,
