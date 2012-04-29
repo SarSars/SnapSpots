@@ -27,6 +27,9 @@
 				'photographyType': 'Test Photography Type 1',
 				'timeOfDay': 'Test ToD 1'
 			});
+			
+			console.debug(location.get('locationName'));
+			console.debug(location.get('locationDescription'));
 
 			location.create({
 				success: function(model) {
