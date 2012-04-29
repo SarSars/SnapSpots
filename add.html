@@ -33,14 +33,14 @@
 		function createLocation() {
 		
 			var newLocation = new locationItem({
-				locationName: 'Test Location 1', 
-				locationDescription: 'Test Description 1',
-				photographyType: 'Test Photography Type 1',
-				timeOfDay: 'Test ToD 1'
+				locationname: 'Test Location 1', 
+				locationdescription: 'Test Description 1',
+				photographytype: 'Test Photography Type 1',
+				timeofday: 'Test ToD 1'
 			});
 			
-			console.debug(newLocation.get('locationName'));
-			console.debug(newLocation.get('locationDescription'));
+			console.debug(newLocation.get('locationname'));
+			console.debug(newLocation.get('locationdescription'));
 
 			newLocation.create({
 				success: function(model) {
