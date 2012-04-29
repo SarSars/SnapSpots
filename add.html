@@ -40,6 +40,8 @@
 			$("#cbxType :checkbox:checked").each (function () {
 				typeList = typeList + $(this).attr('name') + ',';
 			});
+			
+			var fixedList = typeList.substring(0, typeList.length() - 1);
 
 			var newLocation = new locationItem({
 				locationname: _locationName, 
