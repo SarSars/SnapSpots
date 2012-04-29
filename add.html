@@ -35,33 +35,16 @@
 			var _locationName = $("#txtName").val();
 			var _locationDescription = $("#txtDescription").val();
 			var _timeOfDay = $("#ddTime option:selected").text();
-			
-			/*var stringList;
-			$("#cbxType").each (function (index) {
-				stringList = stringList + ',' + $(this).attr ("checked");
-			});
-			
-			console.log(stringList);*/
-			
-			
-			//$("input[type='checkbox']:first").attr("checked",true).checkboxradio("refresh");
-			
-			
+			var typeList;
+						
 			$("#cbxType :checkbox:checked").each (function () {
-				console.log($(this).attr('name'));
-			});
-			
-			//var atLeastOneIsChecked = $('#cbxType :checkbox:checked').length;
-			//console.log(atLeastOneIsChecked);
+				typeList = $(this).attr('name')) + ',';
+			});			
 		
-
-
-
-
 			var newLocation = new locationItem({
 				locationname: _locationName, 
 				locationdescription: _locationDescription,
-				photographytype: 'Test Photography Type 1',
+				photographytype: typeList,
 				timeofday: _timeOfDay
 			});
 
