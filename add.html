@@ -32,11 +32,11 @@
 
 		function createLocation() {
 		
-			var _locationName = $("#locationName").val();
-			var _locationDescription = $("#locationDescription").val();
+			var _locationName = $("#txtName").val();
+			var _locationDescription = $("#txtDescription").val();
 			//var _ddTime = document.getElementById("ddTime");
 			//var _timeOfDay = _ddTime.options[_ddTime.selectedIndex].text; 
-			var _timeOfDay = $("#ddTime").val();
+			var _timeOfDay = $("#ddTime").text();
 
 		
 			var newLocation = new locationItem({
