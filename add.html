@@ -46,12 +46,13 @@
 			
 			//$("input[type='checkbox']:first").attr("checked",true).checkboxradio("refresh");
 			
-			/*$("input[type='checkbox']:checkbox:checked").each (function (index) {
+			/*
+			$("input[type='checkbox']:checkbox:checked").each (function (index) {
 				console.log('yes!');
 			});*/
 			
-			var checkcount = $('#checkArray :checkbox:checked').length;
-			console.log(checkcount);
+			var atLeastOneIsChecked = $('#cbxType :checkbox:checked').length;
+			console.log(atLeastOneIsChecked);
 		
 
 
@@ -105,25 +106,25 @@
 				
 					<legend>Tick all that apply</legend>
 					
-					<input type="checkbox" name="checkbox-1a" class="custom" />
+					<input type="checkbox" id="checkbox-1a" class="custom" />
 					<label for="checkbox-1a">Astrophotography</label>
 
-					<input type="checkbox" name="checkbox-1a" class="custom" />
+					<input type="checkbox" id="checkbox-2a" class="custom" />
 					<label for="checkbox-2a">Event</label>
 
-					<input type="checkbox" name="checkbox-1a" class="custom" />
+					<input type="checkbox" id="checkbox-3a" class="custom" />
 					<label for="checkbox-3a">Landscape</label>
 
-					<input type="checkbox" name="checkbox-1a" class="custom" />
+					<input type="checkbox" id="checkbox-4a" class="custom" />
 					<label for="checkbox-4a">Macro</label>
 					
-					<input type="checkbox" name="checkbox-1a" class="custom" />
+					<input type="checkbox" id="checkbox-5a" class="custom" />
 					<label for="checkbox-5a">Sport</label>
 					
-					<input type="checkbox" name="checkbox-1a" class="custom" />
+					<input type="checkbox" id="checkbox-6a" class="custom" />
 					<label for="checkbox-6a">Street / People</label>
 					
-					<input type="checkbox" name="checkbox-1a" class="custom" />
+					<input type="checkbox" id="checkbox-7a" class="custom" />
 					<label for="checkbox-7a">Wildlife</label>
 					
 				</fieldset>
