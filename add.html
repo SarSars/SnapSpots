@@ -46,13 +46,13 @@
 			
 			//$("input[type='checkbox']:first").attr("checked",true).checkboxradio("refresh");
 			
-			/*
-			$("input[type='checkbox']:checkbox:checked").each (function (index) {
-				console.log('yes!');
-			});*/
 			
-			var atLeastOneIsChecked = $('#cbxType :checkbox:checked').length;
-			console.log(atLeastOneIsChecked);
+			$("#cbxType :checkbox:checked").each (function (index) {
+				console.log('yes!');
+			});
+			
+			//var atLeastOneIsChecked = $('#cbxType :checkbox:checked').length;
+			//console.log(atLeastOneIsChecked);
 		
 
 
