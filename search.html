@@ -40,6 +40,8 @@
 			//document.write(localStorage.getItem("name")); //Hello World!
 			//localStorage.removeItem("name"); //deletes the matching item from the database
 
+			console.log('Value saved was ' + $("#txtName").val());
+			
 			listLocations();
 			$.mobile.changePage("#searchpage");
 		}
@@ -49,6 +51,8 @@
 			var locations = new locationCollection();				
 		
 			var locationQuery = new StackMob.Collection.Query();
+			
+			console.log('Value retrieved was ' + localStorage.getItem("timeofdayFilter"));
 			locationQuery.equals('timeofday', localStorage.getItem("timeofdayFilter"));
 			//locationQuery.mustBeOneOf('photographytype', 'Event');
 			
