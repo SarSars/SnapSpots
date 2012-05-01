@@ -36,11 +36,11 @@
 
 		function refreshLocations() {
 		
-			localStorage.setItem("timeofdayFilter", $("#txtName").val()); //saves to the database, key/value
+			localStorage.setItem("timeofdayFilter", $("#txtSearch").val()); //saves to the database, key/value
 			//document.write(localStorage.getItem("name")); //Hello World!
 			//localStorage.removeItem("name"); //deletes the matching item from the database
 
-			console.log('Value saved was ' + $("#txtName").val());
+			console.log('Value saved was ' + $("#txtSearch").val());
 			
 			listLocations();
 			$.mobile.changePage("#searchpage");
