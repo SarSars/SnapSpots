@@ -32,18 +32,16 @@
 		
 		var locationCollection = StackMob.Collection.extend({    
 			model: locationItem
-		});
-
-		
+		});		
 
 		function listLocations() {			
 
 			var locations = new locationCollection();				
 		
-			//var locationQuery = new StackMob.Collection.Query();
-			//locationQuery.equals('timeofday', 'Sunset');			
+			var locationQuery = new StackMob.Collection.Query();
+			locationQuery.equals('timeofday', 'Sunset');			
 
-			locations.fetch({
+			locations.query(locationQuery, {
 				success: function(collection) {					
 					$.each(locations.toJSON(), function(i, location) {					
 						$('#locationList').append('<li><a href="javascript:showLocationDetail({'
