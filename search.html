@@ -32,14 +32,22 @@
 		
 		var locationCollection = StackMob.Collection.extend({    
 			model: locationItem
-		});
-
-		var locationCollectionInstance = new locationCollection();
+		});		
 
 		function listLocations() {			
-			locationCollectionInstance.fetch({				
+				
+			var locationQuery = new StackMob.Collection.Query();
+			locationQuery.equals('timeofday', 'Sunset');
+
+			var locations = new locationCollection();
+			 
+			/*locations.query(locationQuery, {
+				success: function(collection) {},
+				error: function(model, response) {}*/
+		
+			locations.fetch(locationQuery, {
 				success: function(collection) {					
-					$.each(locationCollectionInstance.toJSON(), function(i, location) {					
+					$.each(locations.toJSON(), function(i, location) {					
 						$('#locationList').append('<li><a href="javascript:showLocationDetail({'
 						+ '\'locationName\':\'' + location.locationname + '\','
 						+ '\'locationDescription\':\'' + location.locationdescription + '\','
@@ -70,11 +78,7 @@
 			
 			$.mobile.changePage("#detailspage");
 		} 
-		
-		function createLocation() {
-			console.log('BOOYAH');
-		}
-	
+
 		$("#searchpage").live("pageinit", function() {
 			listLocations();
 		});
@@ -98,13 +102,6 @@
 	
 	<div data-role="content">			
 		<ul id="locationList" data-role="listview" data-theme="c">
-			<!-- SAMPLE LI ONLY -->
-			<!--<li>
-				<a href="#detailspage" data-transition="slide">
-					<h2>Devil's Glen 2</h2>
-					<span class="ui-li-count">1 km(s) away</span>
-				</a>
-            </li>-->
 		</ul>
 	</div><!-- /content -->
 
@@ -121,7 +118,7 @@
 
 
 <div data-role="page" id="optionspage" data-transition="flip">
-	
+
 	<div data-role="header">
 		<a href="#searchpage" data-icon="check" data-transition="flip">Save</a>
 		<h2>Search Options</h2>		
