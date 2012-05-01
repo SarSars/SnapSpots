@@ -25,14 +25,19 @@
 		clientSubdomain: 'petermurphy',
 		apiVersion: 0
 		});
-		
+
 		var locationItem = StackMob.Model.extend({    
 			schemaName: 'location'
 		});
 		
 		var locationCollection = StackMob.Collection.extend({    
 			model: locationItem
-		});		
+		});
+
+		function refreshLocations() {
+			listLocations();
+			$.mobile.changePage("#detailspage");
+		}
 
 		function listLocations() {			
 
@@ -40,8 +45,8 @@
 		
 			var locationQuery = new StackMob.Collection.Query();
 			locationQuery.equals('timeofday', 'Sunset');
-			locationQuery.equals('photographytype', 'Wildlife');
-
+			locationQuery.mustBeOneOf('photographytype', 'Event');
+			
 			locations.query(locationQuery, {
 				success: function(collection) {					
 					$.each(locations.toJSON(), function(i, location) {					
@@ -62,7 +67,7 @@
 				}
 			});	
 		}
-		
+
 		function showLocationDetail(o) {
 			$('#locationName').text(o.locationName);
 			$('#locationDescription').text(o.locationDescription);
