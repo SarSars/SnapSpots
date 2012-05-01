@@ -57,7 +57,7 @@
 
 			newLocation.create({
 				success: function(model) {
-					window.location.replace('search.html');
+					//window.location.replace('search.html');
 				},
 
 				error: function(model, response) {      
@@ -98,7 +98,7 @@
 
 	<div data-role="content">
 		
-		<form action="search.html" method="POST">
+		<form action="http://dev.snapspots.petermurphy.stackmobapp.com/search.html" method="POST">
 		
 			<div data-role="fieldcontain">
 				<label for="txtName">Name</label>
