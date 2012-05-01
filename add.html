@@ -57,7 +57,7 @@
 
 			newLocation.create({
 				success: function(model) {
-					window.location.replace('http://dev.snapspots.petermurphy.stackmobapp.com/search.html');
+					window.location.replace('search.html');
 				},
 
 				error: function(model, response) {      
@@ -97,9 +97,7 @@
 	</div><!-- /header -->
 
 	<div data-role="content">
-		
-		<!--<form action="http://dev.snapspots.petermurphy.stackmobapp.com/search.html" method="POST">-->
-		
+	
 			<div data-role="fieldcontain">
 				<label for="txtName">Name</label>
 				<input type="text" id="txtName" value="" placeholder="Enter a name" data-mini="true"/>
@@ -152,13 +150,6 @@
 				</select>
 			</div>
 			
-			<!-- Maybe some other time :)
-			<div data-role="fieldcontain">
-				<label for="camera">Take a Snapshot</label>
-				<a href="index.html" data-role="button" data-icon="grid" data-mini="true" data-iconpos="right">Go to Camera</a>
-			</div>
-			-->
-			
 			<div data-role="fieldcontain">
 				<label for="map">Plot Location</label>
 				<!--<iframe name="map" width="250" height="250" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/?ie=UTF8&amp;ll=53.286737,-6.363026&amp;spn=0.006144,0.016512&amp;t=m&amp;z=17&amp;output=embed"></iframe><br /><small>-->
@@ -169,18 +160,12 @@
 					<div class="ui-block-a"><button type="submit" data-theme="d" data-mini="true">Cancel</button></div>
 					<div class="ui-block-b"><button type="submit" data-theme="a" data-mini="true" onclick="javascript:createLocation();">Save</button></div>
 				</fieldset>
-
-				<!--<fieldset>
-				 <div><button type="submit" data-theme="c">Cancel</button></div>
-				 <div><button type="submit" data-theme="b">Submit</button></div>
-				</fieldset>-->
+				
 			</div>
 
 			<div data-role="fieldcontain">
 				<label id="lblWarning" class="warning"></label>
 			</div>
-		
-		<!--</form>		-->
 		
 	</div><!-- /content -->
 
