@@ -51,7 +51,7 @@
 			locationQuery.equals('timeofday', localStorage.getItem("timeofdayFilter"));
 			//locationQuery.mustBeOneOf('photographytype', 'Event');
 			
-			$('#locationList li').empty();
+			$('#locationList').children().remove();
 			
 			locations.query(locationQuery, {
 				success: function(collection) {					
