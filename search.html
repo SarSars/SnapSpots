@@ -34,13 +34,9 @@
 			model: locationItem
 		});
 
-		function refreshLocations() {
+		function saveFilter() {
 		
 			localStorage.setItem("timeofdayFilter", $("#txtSearch").val()); //saves to the database, key/value
-			//document.write(localStorage.getItem("name")); //Hello World!
-			//localStorage.removeItem("name"); //deletes the matching item from the database
-
-			console.log('Value saved was ' + $("#txtSearch").val());
 			
 			listLocations();
 			$.mobile.changePage("#searchpage");
@@ -52,8 +48,9 @@
 		
 			var locationQuery = new StackMob.Collection.Query();
 			
-			console.log('Value retrieved was ' + localStorage.getItem("timeofdayFilter"));
-			locationQuery.equals('timeofday', localStorage.getItem("timeofdayFilter"));
+			if (localStorage.getItem("timeofdayFilter") != 'undefined') {
+				locationQuery.equals('timeofday', localStorage.getItem("timeofdayFilter"));
+			}
 			//locationQuery.mustBeOneOf('photographytype', 'Event');
 			
 			locations.query(locationQuery, {
@@ -110,7 +107,7 @@
 
 	<div data-role="header">
 		<h2>Find a Spot</h2>
-		<a href="#optionspage" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-transition="flip"></a>
+		<a href="#filterpage" data-icon="gear" class="ui-btn-right" data-iconpos="notext" data-transition="flip"></a>
 	</div><!-- /header -->
 	
 	<div data-role="content">			
@@ -130,10 +127,10 @@
 </div><!-- /page -->
 
 
-<div data-role="page" id="optionspage" data-transition="flip">
+<div data-role="page" id="filterpage" data-transition="flip">
 
 	<div data-role="header">
-		<a href="javascript:refreshLocations();" data-icon="check" data-transition="flip">Save</a>
+		<a href="javascript:saveFilter();" data-icon="check" data-transition="flip">Save</a>
 		<h2>Search Options</h2>		
 	</div>
 	
