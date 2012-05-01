@@ -42,16 +42,16 @@
 			$.mobile.changePage("#searchpage");
 		}
 
-		function listLocations() {			
+		function listLocations() {
 
 			var locations = new locationCollection();				
 		
 			var locationQuery = new StackMob.Collection.Query();
 			
-			if (localStorage.getItem("timeofdayFilter") != 'undefined') {
-				locationQuery.equals('timeofday', localStorage.getItem("timeofdayFilter"));
-			}
+			locationQuery.equals('timeofday', localStorage.getItem("timeofdayFilter"));
 			//locationQuery.mustBeOneOf('photographytype', 'Event');
+			
+			$('#locationList li').empty();
 			
 			locations.query(locationQuery, {
 				success: function(collection) {					
