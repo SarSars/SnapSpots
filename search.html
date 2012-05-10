@@ -55,7 +55,7 @@
 			var locationQuery = new StackMob.Collection.Query();
 			
 			locationQuery.equals('timeofday', localStorage.getItem("timeofdayFilter"));
-			locationQuery.mustBeOneOf('photographytype', localStorage.getItem("typeOfPhotographyFilter");
+			locationQuery.mustBeOneOf('photographytype', localStorage.getItem("typeOfPhotographyFilter"));
 
 			$('#locationList').children().remove();
 			
