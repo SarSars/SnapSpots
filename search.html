@@ -77,7 +77,7 @@
 			}
 
 			if (tmpType != '') {
-				locationQuery.mustBeOneOf('photographytype', tmpType);
+				locationQuery.mustBeOneOf('photographytype', tmpType); //This is not fucking working!!  Test case is Sunset, All Types
 			}
 			
 			if (tmpTime != '') {
@@ -235,11 +235,6 @@
 		<div data-role="fieldcontainer">
 			<p>Location Map</p>
 			<p>(This will be a map!)</p>
-		</div>
-		
-		<div data-role="fieldcontainer">
-			<p>Location Preview</p>
-			<img src="images/sunset.jpg" />
 		</div>
 		
 	</div>	
