@@ -34,28 +34,55 @@
 			model: locationItem
 		});
 
-		function saveFilter() {
-
-			//localStorage.setItem("nameFilter", $("txtSearch").val());
-			localStorage.setItem("typeOfPhotographyFilter", $("#ddType").find("option:selected").text());
-			localStorage.setItem("timeofdayFilter", $("#ddTime").find("option:selected").text());
-
+		function saveFilter() {			
+			
+			var tmpSearch = $("txtSearch").val();
+			var tmpType = $("#ddType").find("option:selected").text();
+			var tmpTime = $("#ddTime").find("option:selected").text();
+			
+			localStorage.setItem("nameFilter", tmpSearch);
+			
+			if (tmpType == "Any Type of Photography") {
+				localStorage.setItem("typeOfPhotographyFilter", '');
+			}
+			else {
+				localStorage.setItem("typeOfPhotographyFilter", tmpType);
+			}
+			
+			if (tmpTime == "Any Time of Day") {
+				localStorage.setItem("timeofdayFilter", '');
+			}
+			else {
+				localStorage.setItem("timeofdayFilter", tmpTime);
+			}
+			
 			listLocations();
 			$.mobile.changePage("#searchpage");
 		}
-		
+
 		function setFilterValues() {
 			
 		}
 
 		function listLocations() {
 
-			var locations = new locationCollection();				
-		
+			var locations = new locationCollection();		
 			var locationQuery = new StackMob.Collection.Query();
+			var tmpSearch = localStorage.getItem("nameFilter")
+			var tmpType = localStorage.getItem("typeOfPhotographyFilter")
+			var tmpTime = localStorage.getItem("timeofdayFilter");
+
+			if (tmpSearch != '') {
+				//locationQuery.equals('timeofday', );  INDEX OF!
+			}
 			
-			locationQuery.equals('timeofday', localStorage.getItem("timeofdayFilter"));
-			locationQuery.mustBeOneOf('photographytype', localStorage.getItem("typeOfPhotographyFilter"));
+			if (tmpType != '') {
+				locationQuery.mustBeOneOf('photographytype', tmpType);
+			}
+			
+			if (tmpTime != '') {
+				locationQuery.equals('timeofday', tmpTime);
+			}			
 
 			$('#locationList').children().remove();
 			
