@@ -36,6 +36,8 @@
 
 		function saveFilter() {
 
+			//localStorage.setItem("nameFilter", $("txtSearch").val());
+			localStorage.setItem("typeOfPhotographyFilter", $("#ddType").find("option:selected").text());
 			localStorage.setItem("timeofdayFilter", $("#ddTime").find("option:selected").text());
 
 			listLocations();
@@ -53,8 +55,8 @@
 			var locationQuery = new StackMob.Collection.Query();
 			
 			locationQuery.equals('timeofday', localStorage.getItem("timeofdayFilter"));
-			//locationQuery.mustBeOneOf('photographytype', 'Event');
-			
+			locationQuery.mustBeOneOf('photographytype', localStorage.getItem("typeOfPhotographyFilter");
+
 			$('#locationList').children().remove();
 			
 			locations.query(locationQuery, {
@@ -156,13 +158,13 @@
 
 		<div data-role="fieldcontain">
 			<select name="typeOfPhotography" id="ddType" data-mini="true">
-				<option value="0">Any Type of Photography</option>
-				<option value="1">Astrophotography</option>
-				<option value="2">Landscape</option>
-				<option value="3">Macro</option>
-				<option value="4">Sport</option>
-				<option value="5">Street / People</option>
-				<option value="6">Wildlife</option>
+				<option>Any Type of Photography</option>
+				<option>Astrophotography</option>
+				<option>Landscape</option>
+				<option>Macro</option>
+				<option>Sport</option>
+				<option>Street / People</option>
+				<option>Wildlife</option>
 			</select>
 		</div>
 
