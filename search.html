@@ -73,9 +73,9 @@
 			var tmpTime = localStorage.getItem("timeofdayFilter");
 
 			if (tmpSearch != '') {
-				//locationQuery.equals('timeofday', );  INDEX OF!
+				locationQuery.mustBeOneOf('locationName', tmpSearch);
 			}
-			
+
 			if (tmpType != '') {
 				locationQuery.mustBeOneOf('photographytype', tmpType);
 			}
